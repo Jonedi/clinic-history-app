@@ -13,18 +13,22 @@ const routes = [
   {
     path: '/perfil',
     name: 'perfil',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import('../views/PerfilView.vue')
   },
   {
     path: '/registro',
     name: 'registro',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import('../views/RegistroView.vue')
+  },
+  {
+    path: '/editar-hv/:id',
+    name: 'EditarHC',
+    component: () => import('../views/EditarHC.vue')
+  },
+  {
+    path: '/agregarHC',
+    name: 'agregarHC',
+    component: () => import('../views/AgregarHC.vue')
   }
 ]
 
