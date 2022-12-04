@@ -1,11 +1,12 @@
 <template>
   <div>
-    <h1>Registro</h1>
-
+    <h1>Login</h1>
     <b-container>
       <b-row align-h="center">
         <b-col cols="12" md="6">
-          <b-form @submit.stop.prevent="crearUsuario({email: form.email, password: form.password})">
+          <b-form
+            @submit.stop.prevent="loginUsuario({ email: form.email, password: form.password }) "
+          >
             <b-form-group id="group_email" class="my-2">
               <b-form-input
                 id="email"
@@ -29,7 +30,7 @@
                 name="password"
                 ref="password"
                 v-model="form.password"
-                v-validate="{ required: true, min:6 }"
+                v-validate="{ required: true, min: 6 }"
                 :state="validateState('password')"
                 aria-describedby="password-live-feedback"
                 type="password"
@@ -40,7 +41,12 @@
               </b-form-invalid-feedback>
             </b-form-group>
             <div class="mb-2 d-flex justify-content-start">
-              <b-button variant="light" class="show_password" v-on:click="mostrarContraseña()">ver contraseña</b-button>
+              <b-button
+                variant="light"
+                class="show_password"
+                v-on:click="mostrarContraseña()"
+                >ver contraseña</b-button
+              >
             </div>
             <div class="d-flex justify-content-around">
               <b-button type="submit" variant="primary" :disabled="desactivar">Registrar</b-button>
@@ -57,8 +63,8 @@
 import { mapActions, mapState } from 'vuex';
 
 export default {
-  name: "Registro",
-  data: () => ({
+    name: 'Login',
+    data: () => ({
     form: {
       email: "",
       password: "",
@@ -67,11 +73,11 @@ export default {
   computed: {
     ...mapState(['error']),
     desactivar() {
-      return this.form.email.trim()  === '' && this.form.password.trim()  === '' 
+      return this.form.email.trim()  === '' && this.form.password.trim()  === ''
     }
   },
   methods: {
-    ...mapActions(['crearUsuario']),
+    ...mapActions(['loginUsuario']),
     validateState(ref) {
       if (
         this.veeFields[ref] &&
@@ -90,12 +96,5 @@ export default {
       }
     }
   },
-  
-};
-</script>
-
-<style lang="scss">
-.show_password {
-  
 }
-</style>
+</script>

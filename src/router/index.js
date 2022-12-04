@@ -16,9 +16,14 @@ const routes = [
     component: () => import('../views/PerfilView.vue')
   },
   {
-    path: '/registro',
-    name: 'registro',
+    path: '/signup',
+    name: 'signup',
     component: () => import('../views/RegistroView.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/LoginView.vue')
   },
   {
     path: '/editar-hv/:id',
@@ -29,6 +34,11 @@ const routes = [
     path: '/agregarHC',
     name: 'agregarHC',
     component: () => import('../views/AgregarHC.vue')
+  },
+  {
+    path: '/dashboard',
+    name: 'eashboard',
+    component: () => import('../views/DashboardUsuario.vue')
   }
 ]
 
