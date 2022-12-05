@@ -1,4 +1,4 @@
-# app
+# clinic-history-app
 
 ## Project setup
 ```

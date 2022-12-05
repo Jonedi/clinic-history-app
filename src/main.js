@@ -4,10 +4,11 @@ import router from "./router";
 import store from "./store";
 import { camelCase, upperFirst } from "lodash";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-import { auth } from './firebase'
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-import VueCompositionAPI from "@vue/composition-api";
+import './assets/scss/app.scss'
+import { auth } from './firebase'
+// import VueCompositionAPI from "@vue/composition-api";
 import VeeValidate from "vee-validate";
 
 Vue.use(VeeValidate, {
@@ -15,7 +16,7 @@ Vue.use(VeeValidate, {
   fieldsBagName: "veeFields",
   errorBagName: "veeErrors",
 });
-Vue.use(VueCompositionAPI);
+// Vue.use(VueCompositionAPI);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.config.productionTip = false;

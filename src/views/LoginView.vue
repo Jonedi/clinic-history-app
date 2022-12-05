@@ -1,7 +1,14 @@
 <template>
   <div>
-    <h1>Login</h1>
     <b-container>
+      <b-row align-h="center">
+        <b-col cols="10" md="6">
+          <b-img v-bind="imgProps" :src="logo" thumbnail fluid alt="Logo historyApp"/>
+        </b-col>
+      </b-row>
+    </b-container>
+
+    <b-container class="mt-5">
       <b-row align-h="center">
         <b-col cols="12" md="6">
           <b-form
@@ -49,9 +56,9 @@
               >
             </div>
             <div class="d-flex justify-content-around">
-              <b-button type="submit" variant="primary" :disabled="desactivar">Registrar</b-button>
+              <b-button type="submit" variant="primary" :disabled="desactivar">Iniciar Sesión</b-button>
             </div>
-            <p>{{ error }}</p>
+            <p v-if="error" class="mt-4">El usuario no ha sido encontrado, por favor <router-link to="/signup">Registrarse</router-link></p>
           </b-form>
         </b-col>
       </b-row>
@@ -61,14 +68,16 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import { ItemsMixins } from '@/mixins/ItemsMixins'
 
 export default {
     name: 'Login',
+    mixins: [ItemsMixins],
     data: () => ({
-    form: {
-      email: "",
-      password: "",
-    },
+      form: {
+        email: "",
+        password: "",
+      },
   }),
   computed: {
     ...mapState(['error']),

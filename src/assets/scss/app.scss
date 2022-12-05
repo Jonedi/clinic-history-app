@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+nav {
+    color: #000;
+    .hc-fs-nav {
+        font-size: rem(16);
+        @include media-breakpoint-down(up) {
+            font-size: rem(16);
+        }
+    }
+    .nav-link {
+        &.nav-active {
+            background-color: rgba(#6c757d, 0.6);
+        }
+    }
+}
