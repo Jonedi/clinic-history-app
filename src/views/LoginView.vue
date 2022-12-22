@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container>
+    <b-container class="mt-5">
       <b-row align-h="center">
         <b-col cols="10" md="6">
           <b-img v-bind="imgProps" :src="logo" thumbnail fluid alt="Logo historyApp"/>
